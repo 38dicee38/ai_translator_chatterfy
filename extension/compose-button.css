@@ -1,0 +1,50 @@
+.cft-compose-btn {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  z-index: 100;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.55;
+  transition: opacity 0.15s, background 0.15s;
+}
+
+.cft-compose-btn:hover {
+  opacity: 1;
+  background: #2563eb;
+}
+
+.cft-compose-btn--busy {
+  opacity: 1;
+  cursor: default;
+  animation: cft-compose-pulse 0.9s ease-in-out infinite;
+}
+
+.cft-compose-btn--warn {
+  opacity: 1;
+  background: #f59e0b;
+}
+
+.cft-compose-btn--error {
+  opacity: 1;
+  background: #dc2626;
+}
+
+@keyframes cft-compose-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.88);
+  }
+}

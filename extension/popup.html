@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chatterfy AI Translator</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <h1>Chatterfy AI Translator</h1>
+
+  <section class="cft-section">
+    <label class="cft-label" for="manualDialectOverride">Диалект вручную (если авто-определение ошиблось)</label>
+    <div class="cft-row">
+      <input type="text" id="manualDialectOverride" placeholder="например: марокканская дарижа, латиницей" />
+      <button type="button" id="clearDialect" class="cft-btn cft-btn--ghost">Сбросить</button>
+    </div>
+    <p class="cft-hint">Пусто — перевод сам подбирает диалект по последним сообщениям собеседника.</p>
+  </section>
+
+  <section class="cft-section">
+    <h2 class="cft-subheading">Прокси</h2>
+    <label class="cft-label" for="proxyBaseUrl">Адрес прокси</label>
+    <input type="text" id="proxyBaseUrl" placeholder="http://localhost:8787" />
+    <label class="cft-label" for="extensionToken">Токен (X-Extension-Token)</label>
+    <input type="password" id="extensionToken" placeholder="dev-local-token" />
+    <div class="cft-row">
+      <button type="button" id="saveProxyConfig" class="cft-btn">Сохранить</button>
+      <span id="saveStatus" class="cft-hint"></span>
+    </div>
+  </section>
+
+  <section class="cft-section">
+    <h2 class="cft-subheading">Дневной бюджет</h2>
+    <div id="budgetStatus" class="cft-budget">Проверяю...</div>
+    <div class="cft-budget-bar"><div id="budgetBarFill" class="cft-budget-bar__fill"></div></div>
+    <button type="button" id="refreshBudget" class="cft-btn cft-btn--ghost">Обновить</button>
+  </section>
+
+  <script src="shared-defaults.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

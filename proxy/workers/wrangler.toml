@@ -1,0 +1,17 @@
+name = "chatterfy-translator-proxy"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+[vars]
+MOCK_MODE = "false"
+DAILY_BUDGET_USD = "10"
+
+[[kv_namespaces]]
+binding = "BUDGET_KV"
+id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+preview_id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+
+# EXTENSION_TOKEN и OPENAI_API_KEY — секреты, не сюда:
+#   wrangler secret put EXTENSION_TOKEN
+#   wrangler secret put OPENAI_API_KEY
+# Локально при `wrangler dev` их значения берутся из .dev.vars (см. .dev.vars.example).

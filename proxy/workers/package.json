@@ -1,0 +1,15 @@
+{
+  "name": "chatterfy-translator-proxy-workers",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Тот же бэкенд-прокси, что proxy/, но под деплой на Cloudflare Workers (бесплатный тариф) — KV вместо файла для бюджетного счётчика, нативный FormData вместо multer.",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test:skeleton": "node test/verify-workers-skeleton.js"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "chatterfy-translator-proxy",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Backend proxy for Chatterfy AI Translator: holds API keys, auth, budget limit. See docs/TZ.md §3.",
+  "type": "commonjs",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test:skeleton": "node test/verify-skeleton.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "multer": "^2.0.1"
+  }
+}

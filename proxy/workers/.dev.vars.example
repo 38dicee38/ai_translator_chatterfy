@@ -1,0 +1,14 @@
+# Скопируй в .dev.vars (для `wrangler dev`). В .gitignore, не коммитить.
+# MOCK_MODE и DAILY_BUDGET_USD уже заданы в wrangler.toml [vars] —
+# сюда добавляй, только если хочешь их локально переопределить.
+
+EXTENSION_TOKEN=dev-local-token
+OPENAI_API_KEY=
+
+# Опционально — см. proxy/.env.example за полным описанием каждой из них:
+# EXTENSION_TOKENS={"token-a":"Иван","token-b":"Мария"}
+# MONTHLY_BUDGET_USD=
+# EMPLOYEE_DAILY_BUDGET_USD=
+# RATE_LIMIT_PER_MINUTE=20
+# ALERT_WEBHOOK_URL=
+# ADMIN_TOKEN=
