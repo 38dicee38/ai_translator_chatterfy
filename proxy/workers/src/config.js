@@ -2,13 +2,16 @@ function numberFromEnv(value, fallback) {
   const parsed = Number(value);
   return value !== void 0 && value !== "" && Number.isFinite(parsed) ? parsed : fallback;
 }
+
 function nullableNumberFromEnv(value) {
   if (value === void 0 || value === "") return null;
   const parsed = Number(value);
   return Number.isFinite(parsed) ? parsed : null;
 }
+
 function parseEmployeeTokens(rawJson, legacySingleToken) {
   const map = {};
+
   if (rawJson) {
     try {
       const parsed = JSON.parse(rawJson);
@@ -19,11 +22,14 @@ function parseEmployeeTokens(rawJson, legacySingleToken) {
       console.error("EXTENSION_TOKENS не распарсился как JSON, игнорирую:", err.message);
     }
   }
+
   if (Object.keys(map).length === 0 && legacySingleToken) {
     map[legacySingleToken] = "default";
   }
+
   return map;
 }
+
 export function config(env) {
   return {
     mockMode: env.MOCK_MODE === "true",
@@ -34,7 +40,8 @@ export function config(env) {
     employeeDailyBudgetUsd: nullableNumberFromEnv(env.EMPLOYEE_DAILY_BUDGET_USD),
     employeeTokens: parseEmployeeTokens(env.EXTENSION_TOKENS, env.EXTENSION_TOKEN),
     rateLimitPerMinute: numberFromEnv(env.RATE_LIMIT_PER_MINUTE, 20),
+    kvFlushIntervalSeconds: numberFromEnv(env.KV_FLUSH_INTERVAL_SECONDS, 120),
     alertWebhookUrl: env.ALERT_WEBHOOK_URL || "",
-    adminToken: env.ADMIN_TOKEN || ""
+    adminToken: env.ADMIN_TOKEN || "",
   };
 }

@@ -14,9 +14,9 @@
     "https://v2.chatterfy.ai/*",
     "https://migration-api.chatterfy.ai/*",
     "http://localhost:8787/*",
-    "https://chatterfy-translator-proxy.ваш-поддомен.workers.dev/*",
     "https://prod-chatterfy-v1-files.s3.eu-central-1.amazonaws.com/*",
-    "https://prod-chatterfy-v1-files.s3-eu-central-1.amazonaws.com/*"
+    "https://prod-chatterfy-v1-files.s3-eu-central-1.amazonaws.com/*",
+    "https://chatterfy-translator-proxy.demonivan09.workers.dev/*"
   ],
   "background": {
     "service_worker": "background.js"

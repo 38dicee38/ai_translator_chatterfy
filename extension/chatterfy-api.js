@@ -4,7 +4,11 @@
     chatIdFromUrlPattern: /\/chats?\/([a-zA-Z0-9-]+)/
   };
   const MESSAGES_SEARCH_URL = "https://migration-api.chatterfy.ai/api/messages/v1/search";
-  const COMPOSE_EDITOR_SELECTOR = '.ql-editor[contenteditable="true"]';
+  const COMPOSE_EDITOR_SELECTOR = [
+    '.ql-editor[contenteditable="true"]',
+    '.composer-editor[contenteditable="true"]',
+    '.ProseMirror[contenteditable="true"]',
+  ].join(", ");
   const JWT_PATTERN = /[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}/;
   function getChatContainer() {
     return document.querySelector(CONFIG.chatContainerSelector);
